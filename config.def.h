@@ -25,7 +25,7 @@ static const char col_cyan[]        = "#ebdbb2";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray1, col_gray3,  col_gray3  },
+	[SchemeSel]  = { col_gray1, col_gray2, col_gray2 },
 };
 
 /* tagging */
@@ -36,9 +36,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	/* class         instance       title              tags mask     isfloating   monitor */
+	{ "stalonetray", "stalonetray", "stalonetray",     0,            1,           -1 },
+	{ "icalingua",   NULL,          NULL,              0,            1,           -1 },
+	{ "Sxiv",        "sxiv",        "sxiv",            0,            1,           -1 },
+	{ "mpv",         NULL,          NULL,              0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -160,6 +162,8 @@ static Button buttons[] = {
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
+	{ ClkTagBar,            0,              Button4,        shiftview,      {.i = -1} },
+	{ ClkTagBar,            0,              Button5,        shiftview,      {.i = +1} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
