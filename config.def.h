@@ -36,11 +36,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class         instance       title              tags mask     isfloating   monitor */
-	{ "stalonetray", "stalonetray", "stalonetray",     0,            1,           -1 },
-	{ "icalingua",   NULL,          NULL,              0,            1,           -1 },
-	{ "Sxiv",        "sxiv",        "sxiv",            0,            1,           -1 },
-	{ "mpv",         NULL,          NULL,              0,            1,           -1 },
+	/* class         instance        title             tags mask     isfloating   monitor    scratch key */
+	{ "stalonetray", "stalonetray", "stalonetray",     0,            1,           -1,        0 },
+	{ "icalingua",    NULL,           NULL,            0,            1,           -1,        0 },
+	{ "Sxiv",        "sxiv",        "sxiv",            0,            1,           -1,        0 },
+	{ "mpv",          NULL,           NULL,            0,            1,           -1,        0 },
+	{  NULL,          NULL,          "scratchpad",     0,            1,           -1,       's'},
 };
 
 /* layout(s) */
@@ -90,8 +91,12 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 
+/*First arg only serves to match against key in rules*/
+static const char *scratchpadcmd[] = {"s", "alacritty", "-t", "scratchpad", NULL}; 
+
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY|ALTKEY,                XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
