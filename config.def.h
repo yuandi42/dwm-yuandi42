@@ -42,6 +42,7 @@ static const Rule rules[] = {
 	{ "Sxiv",        "sxiv",        "sxiv",            0,            1,           -1,        0 },
 	{ "mpv",          NULL,           NULL,            0,            1,           -1,        0 },
 	{  NULL,          NULL,          "scratchpad",     0,            1,           -1,       's'},
+	{  NULL,          NULL,          "musicpad",       0,            1,           -1,       'm'},
 };
 
 /* layout(s) */
@@ -92,7 +93,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 
 /*First arg only serves to match against key in rules*/
-static const char *scratchpadcmd[] = {"s", "alacritty", "-t", "scratchpad", "-o", "window.opacity=0.75", "font.size=8.5", NULL}; 
+static const char *scratchpadcmd[] = {"s", "alacritty", "-o", "window.opacity=0.75", "font.size=8.5", "-t", "scratchpad", NULL};
+static const char *musicpadcmd[] = {"m", "alacritty", "-o", "window.opacity=0.75", "font.size=8.5", "-t", "musicpad", "-e", "ncmpcpp", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -179,4 +181,5 @@ static Button buttons[] = {
 static Signal signals[] = {
 	/* signum       function        argument  */
 	{ 1,            togglescratch,  {.v = scratchpadcmd} },
+	{ 2,            togglescratch,  {.v = musicpadcmd} },
 };
