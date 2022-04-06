@@ -92,7 +92,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 
 /*First arg only serves to match against key in rules*/
-static const char *scratchpadcmd[] = {"s", "alacritty", "-t", "scratchpad", NULL}; 
+static const char *scratchpadcmd[] = {"s", "alacritty", "-t", "scratchpad", "-o", "window.opacity=0.75", "font.size=8.5", NULL}; 
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -178,6 +178,5 @@ static Button buttons[] = {
 /* trigger signals using `xsetroot -name "fsignal:<signum>"` */
 static Signal signals[] = {
 	/* signum       function        argument  */
-	{ 1,            setlayout,      {.v = 0} },
-	{ 2,            setmfact,       {.f = +0.05} },
+	{ 1,            togglescratch,  {.v = scratchpadcmd} },
 };
