@@ -15,21 +15,19 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 0;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font:size=18"};
+static const char *fonts[]          = { "Iosevka Nerd Font:size=18", };
 static const char dmenufont[]       = "monospace:size=14";
-static const char col_gray1[]       = "#1d2021";
-static const char col_gray2[]       = "#98971a";
-static const char col_gray3[]       = "#a89984";
-static const char col_gray4[]       = "#b8bb26";
-static const char col_cyan[]        = "#ebdbb2";
+static const char col_bg[]          = "#1d2021";
+static const char col_fg[]          = "#a89984";
+static const char col_g1[]          = "#98971a";
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray1, col_gray2, col_gray2 },
+	/*               fg      bg      border   */
+	[SchemeNorm] = { col_fg, col_bg, col_bg },
+	[SchemeSel]  = { col_bg, col_g1, col_g1 },
 };
 
 /* tagging */
-static const char *tags[] = { "壹", "贰", "叁", "肆", "伍", "陆", "柒", "捌", "玖" };
+static const char *tags[] = { "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ", "Ⅷ", "Ⅸ" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -90,7 +88,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", NULL }; /* just an example. */
 
 /*First arg only serves to match against key in rules*/
 static const char *scratchpadcmd[] = {"s", "alacritty", "-o", "window.opacity=0.75", "font.size=8.5", "-t", "scratchpad", NULL};
