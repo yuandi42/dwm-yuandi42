@@ -1,5 +1,5 @@
-# My build of dwm
 ![dwm icon](dwm.png "icon")
+# My build of dwm
 Forked in Mar 18, 2022. No patch from upstream has been added since then.
 
 It's a rich-featured (i.e., bloated) build of dynamic window manager with a
