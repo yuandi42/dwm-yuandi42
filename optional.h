@@ -1,0 +1,35 @@
+static const Layout layouts[] = {
+	/* symbol     arrange function */
+    { "H[]",      deck },
+    { "===",      bstackhoriz },
+    { "HHH",      grid },
+    { "###",      nrowgrid },
+    { "---",      horizgrid },
+    { ":::",      gaplessgrid },
+    { ">M>",      centeredfloatingmaster },
+};
+static Key keys[] = {
+	/* modifier                     key        function        argument */
+	{ MODKEY|ShiftMask,             XK_h,      inplacerotate,  {.i = +2} },
+	{ MODKEY|ShiftMask,             XK_l,      inplacerotate,  {.i = -2} },
+	{ MODKEY|ALTKEY,                XK_i,      incrigaps,      {.i = +1 } },
+	{ MODKEY|ALTKEY|ShiftMask,      XK_i,      incrigaps,      {.i = -1 } },
+	{ MODKEY|ALTKEY,                XK_o,      incrogaps,      {.i = +1 } },
+	{ MODKEY|ALTKEY|ShiftMask,      XK_o,      incrogaps,      {.i = -1 } },
+	{ MODKEY|ALTKEY,                XK_6,      incrihgaps,     {.i = +1 } },
+	{ MODKEY|ALTKEY|ShiftMask,      XK_6,      incrihgaps,     {.i = -1 } },
+	{ MODKEY|ALTKEY,                XK_7,      incrivgaps,     {.i = +1 } },
+	{ MODKEY|ALTKEY|ShiftMask,      XK_7,      incrivgaps,     {.i = -1 } },
+	{ MODKEY|ALTKEY,                XK_8,      incrohgaps,     {.i = +1 } },
+	{ MODKEY|ALTKEY|ShiftMask,      XK_8,      incrohgaps,     {.i = -1 } },
+	{ MODKEY|ALTKEY,                XK_9,      incrovgaps,     {.i = +1 } },
+	{ MODKEY|ALTKEY|ShiftMask,      XK_9,      incrovgaps,     {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_Up,     moveresizeedge, {.v = "t"} },
+	{ MODKEY|ControlMask,           XK_Down,   moveresizeedge, {.v = "b"} },
+	{ MODKEY|ControlMask,           XK_Left,   moveresizeedge, {.v = "l"} },
+	{ MODKEY|ControlMask,           XK_Right,  moveresizeedge, {.v = "r"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Up,     moveresizeedge, {.v = "T"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Down,   moveresizeedge, {.v = "B"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Left,   moveresizeedge, {.v = "L"} },
+	{ MODKEY|ControlMask|ShiftMask, XK_Right,  moveresizeedge, {.v = "R"} },
+};
