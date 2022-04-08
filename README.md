@@ -1,15 +1,16 @@
 # My build of dwm
+![dwm icon](dwm.png "icon")
 Forked in Mar 18, 2022. No patch from upstream has been added since then.
 
-It's a rich-featured (i.e., bloated) build of dynamic window manager with ten
-or more patch added, aimed to work with
+It's a rich-featured (i.e., bloated) build of dynamic window manager with a
+dozen or so patches added, aimed to work with
 [dwmblocks-aysnc](https://github.com/UtkarshVerma/dwmblocks-async). Details
 below.
 
 ## Requirements
 In order to build dwm you need the Xlib header files. And this build doesn't
 need [libxft-bgra](https://github.com/uditkarode/libxft-bgra) patch,
-temporarily.
+temporarily (Hence no color emoji in the panel).
 
 
 ## Installation
@@ -37,7 +38,36 @@ DISPLAY=foo.bar:1 exec dwm
 (This will start dwm on display :1 of the host foo.bar.)
 
 ## Features
-TODO, and check out my [config.def.h](config.def.h) may help.
+See more in man page (which is still working on, and check out my
+[config.def.h](config.def.h) may help).
+
+* [fancybar](https://dwm.suckless.org/patches/fancybar/), [hide vacant
+  tags](https://dwm.suckless.org/patches/hide_vacant_tags/),
+  [status2d](https://dwm.suckless.org/patches/status2d/) combined together make
+  my panel look great (At least I think it is great).
+* Floating window always appear in the
+  [center](https://dwm.suckless.org/patches/alwayscenter/) (if no direct pos is
+  set), and can be moved and resized without mouse due to
+  [move-resize](https://dwm.suckless.org/patches/moveresize/) patch.
+* Multiple [scratchpad](https://dwm.suckless.org/patches/namedscratchpads/)
+  windows can be created and accessible with differnt keybindings or
+  [fsignals](https://dwm.suckless.org/patches/fsignal/).
+* Clients in stack or master can be
+  [moved](https://dwm.suckless.org/patches/inplacerotate/) up or down.
+* `autostart.sh` will run when dwm
+  [starts](https://dwm.suckless.org/patches/autostart/) (totally useless if you
+  don't do WM hopping).
+* New layouts and [gaps](https://dwm.suckless.org/patches/vanitygaps/) allowed
+  across all layouts.
+* [Clickable statusbar](https://dwm.suckless.org/patches/statuscmd/) with
+  UtkarshVerma's build of
+  [dwmblocks](https://github.com/UtkarshVerma/dwmblocks-async).
+* [Sticky client](https://dwm.suckless.org/patches/sticky/): similar to `tag`
+  function build in suckless dwm, but with ability to toggle off. And a cute
+  [indicator](https://dwm.suckless.org/patches/stickyindicator/) will also be
+  shown in the bar.
+* [No border](https://dwm.suckless.org/patches/noborder/) will be shown if
+  there is only one tiled window visible.
 
 ## See also
 1. My [dotfiles](https://github.com/yuandi42/dotfiles)
