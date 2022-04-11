@@ -24,7 +24,7 @@ static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0}
 static const XPoint stickyiconbb    = {4,8};	/* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
 
 /* tagging */
-static const char *tags[] = { "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ", "Ⅷ", "Ⅸ" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -81,7 +81,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL }; /* just an example. */
 
 /*First arg only serves to match against key in rules*/
-static const char *scratchpadcmd[] = {"s", "alacritty", "-o", "window.opacity=0.75", "font.size=8.5", "-t", "scratchpad", NULL};
+static const char *scratchpadcmd[] = {"s", "alacritty", "-o", "window.opacity=0.95", "font.size=8.5", "-t", "scratchpad", NULL};
 static const char *musicpadcmd[] = {"m", "alacritty", "-o", "window.opacity=0.75", "font.size=8.5", "-t", "musicpad", "-e", "ncmpcpp", NULL};
 
 static Key keys[] = {
@@ -94,8 +94,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_k,      inplacerotate,  {.i = -1} },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_semicolon, incnmaster,  {.i = +1 } },
-	{ MODKEY,                       XK_apostrophe,incnmaster,  {.i = -1 } },
+	{ MODKEY,                       XK_a,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_e,      zoom,           {0} },
 	{ MODKEY,                       XK_g,      togglegaps,     {0} },
 	{ MODKEY|ShiftMask,             XK_g,      defaultgaps,    {0} },
@@ -105,8 +106,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
-    { MODKEY,                       XK_s,      setlayout,      {.v = &layouts[2]} },
-    { MODKEY|ShiftMask,             XK_s,      setlayout,      {.v = &layouts[3]} },
+    { MODKEY,                       XK_r,      setlayout,      {.v = &layouts[2]} },
+    { MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[3]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[4]} },
     { MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[5]} },
     { MODKEY,                       XK_w,      togglefloating, {0} },
@@ -125,7 +126,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_bracketleft,  tagmon,   {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_bracketright, tagmon,   {.i = +1 } },
     { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_0,      togglesticky,   {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
