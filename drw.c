@@ -147,11 +147,11 @@ xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)
 		// return NULL;
 	// }
 
-	// font = ecalloc(1, sizeof(Fnt));
-	// font->xfont = xfont;
-	// font->pattern = pattern;
-	// font->h = xfont->ascent + xfont->descent;
-	// font->dpy = drw->dpy;
+    font = ecalloc(1, sizeof(Fnt));
+    font->xfont = xfont;
+    font->pattern = pattern;
+    font->h = xfont->ascent + xfont->descent;
+    font->dpy = drw->dpy;
 
 	return font;
 }
