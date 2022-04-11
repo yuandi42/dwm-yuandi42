@@ -139,18 +139,19 @@ xfont_create(Drw *drw, const char *fontname, FcPattern *fontpattern)
 	 * https://lists.suckless.org/dev/1701/30932.html
 	 * https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=916349
 	 * and lots more all over the internet.
+     * If you haven't patched libxft correctly, uncomment below lines.
 	 */
-	FcBool iscol;
-	if(FcPatternGetBool(xfont->pattern, FC_COLOR, 0, &iscol) == FcResultMatch && iscol) {
-		XftFontClose(drw->dpy, xfont);
-		return NULL;
-	}
+	// FcBool iscol;
+	// if(FcPatternGetBool(xfont->pattern, FC_COLOR, 0, &iscol) == FcResultMatch && iscol) {
+		// XftFontClose(drw->dpy, xfont);
+		// return NULL;
+	// }
 
-	font = ecalloc(1, sizeof(Fnt));
-	font->xfont = xfont;
-	font->pattern = pattern;
-	font->h = xfont->ascent + xfont->descent;
-	font->dpy = drw->dpy;
+	// font = ecalloc(1, sizeof(Fnt));
+	// font->xfont = xfont;
+	// font->pattern = pattern;
+	// font->h = xfont->ascent + xfont->descent;
+	// font->dpy = drw->dpy;
 
 	return font;
 }

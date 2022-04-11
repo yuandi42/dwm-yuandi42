@@ -8,9 +8,9 @@ dozen or so patches added, aimed to work with
 below.
 
 ## Requirements
-In order to build dwm you need the Xlib header files. And this build doesn't
-need [libxft-bgra](https://github.com/uditkarode/libxft-bgra) patch,
-temporarily (Hence no color emoji in the panel).
+In order to build dwm you need the Xlib header files. And this build needs
+[libxft-bgra](https://github.com/uditkarode/libxft-bgra) patch to show color
+emoji in the panel.
 
 
 ## Installation
