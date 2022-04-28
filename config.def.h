@@ -59,7 +59,6 @@ static const Layout layouts[] = {
 	{ "[M]",      monocle },
 	{ "|M|",      centeredmaster },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ NULL,       NULL },
 };
 
 /* key definitions */
@@ -110,6 +109,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[3]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[4]} },
     { MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[5]} },
+    { MODKEY,                       XK_y,      setlayout,      {.v = &layouts[6]} },
     { MODKEY,                       XK_w,      togglefloating, {0} },
     { MODKEY,                       XK_i,      moveresize,     {.v = "0x 25y 0w 0h" } },
     { MODKEY,                       XK_o,      moveresize,     {.v = "0x -25y 0w 0h" } },
@@ -119,10 +119,10 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_o,      moveresize,     {.v = "0x 0y 0w -25h" } },
     { MODKEY|ShiftMask,             XK_p,      moveresize,     {.v = "0x 0y 25w 0h" } },
     { MODKEY|ShiftMask,             XK_u,      moveresize,     {.v = "0x 0y -25w 0h" } },
-    { MODKEY,                       XK_minus,  shiftview,      { .i = -1 } },
-	{ MODKEY,                       XK_equal,  shiftview,      { .i = +1 } },
-    { MODKEY|ShiftMask,             XK_minus,  shifttag,       { .i = -1 } },
-	{ MODKEY|ShiftMask,             XK_equal,  shifttag,       { .i = +1 } },
+    { MODKEY,                       XK_semicolon,   shiftview, { .i = -1 } },
+	{ MODKEY,                       XK_apostrophe,  shiftview, { .i = +1 } },
+    { MODKEY|ShiftMask,             XK_semicolon,    shifttag, { .i = -1 } },
+	{ MODKEY|ShiftMask,             XK_apostrophe,   shifttag, { .i = +1 } },
 	{ MODKEY,                       XK_bracketleft,  focusmon, {.i = -1 } },
 	{ MODKEY,                       XK_bracketright, focusmon, {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_bracketleft,  tagmon,   {.i = -1 } },
