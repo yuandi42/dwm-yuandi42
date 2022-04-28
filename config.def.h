@@ -86,6 +86,9 @@ static const char *musicpadcmd[] = {"m", "alacritty", "-o", "window.opacity=0.75
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY,                       XK_equal, scratchpad_show, {0} },
+	{ MODKEY|ShiftMask,             XK_equal, scratchpad_hide, {0} },
+	{ MODKEY,                       XK_minus,scratchpad_remove,{0} },
 	{ MODKEY|ALTKEY,                XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
