@@ -80,8 +80,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", NULL }; /* just an example. */
 
 /*First arg only serves to match against key in rules*/
-static const char *scratchpadcmd[] = {"s", "alacritty", "-o", "window.opacity=0.95", "font.size=8.5", "-t", "scratchpad", NULL};
-static const char *musicpadcmd[] = {"m", "alacritty", "-o", "window.opacity=0.75", "font.size=8.5", "-t", "musicpad", "-e", "ncmpcpp", NULL};
+static const char *scratchpadcmd[] = {"s", "scratchpad", NULL};
+static const char *musicpadcmd[] = {"m", "musicpad", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
