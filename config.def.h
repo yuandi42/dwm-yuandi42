@@ -36,7 +36,8 @@ static const Rule rules[] = {
 	{ "icalingua",    NULL,           NULL,            0,            1,           -1,        0 },
 	{ "Sxiv",        "sxiv",        "sxiv",            0,            1,           -1,        0 },
 	{ "mpv",          NULL,           NULL,            0,            1,           -1,        0 },
-	{  NULL,          NULL,          "scratchpad",     0,            1,           -1,       's'},
+	{ "Pinentry-gtk-2",NULL,          NULL,            0,            1,           -1,        0 },
+	{  "tabbed",     "scratchpad",    NULL,            0,            1,           -1,       's'},
 	{  NULL,          NULL,          "musicpad",       0,            1,           -1,       'm'},
 };
 
