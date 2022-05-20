@@ -88,6 +88,7 @@ static const char *musicpadcmd[] = {"m", "musicpad", NULL};
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+	{ MODKEY|ControlMask,           XK_m,      togglescratch,  {.v = musicpadcmd } },
 	{ MODKEY,                       XK_equal, scratchpad_show, {0} },
 	{ MODKEY|ShiftMask,             XK_equal, scratchpad_hide, {0} },
 	{ MODKEY,                       XK_minus,scratchpad_remove,{0} },
