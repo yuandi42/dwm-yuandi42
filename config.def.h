@@ -10,7 +10,7 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font:size=18", };
+static const char *fonts[]          = { "Iosevka Nerd Font:size=14", };
 static const char dmenufont[]       = "monospace:size=14";
 static const char col_bg[]          = "#1d2021";
 static const char col_fg[]          = "#a89984";
@@ -33,6 +33,7 @@ static const Rule rules[] = {
 	 */
 	/* class         instance        title             tags mask     isfloating   monitor    scratch key */
 	{ "stalonetray", "stalonetray", "stalonetray",     0,            1,           -1,        0 },
+	{ "wemeetapp"  , "wemeetap",      NULL,            0,            1,           -1,        0 },
 	{ "icalingua",    NULL,           NULL,            0,            1,           -1,        0 },
 	{ "Sxiv",        "sxiv",        "sxiv",            0,            1,           -1,        0 },
 	{ "mpv",          NULL,           NULL,            0,            1,           -1,        0 },
