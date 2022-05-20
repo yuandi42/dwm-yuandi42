@@ -1114,7 +1114,8 @@ getstatusbarpid()
 				return statuspid;
 		}
 	}
-	if (!(fp = popen("pgrep -o "STATUSBAR, "r")))
+	/* if (!(fp = popen("pgrep -o "STATUSBAR, "r"))) */
+	if (!(fp = popen("pidof -s "STATUSBAR, "r")))
 		return -1;
 	fgets(buf, sizeof(buf), fp);
 	pclose(fp);
