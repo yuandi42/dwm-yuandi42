@@ -87,29 +87,29 @@ static const char *musicpadcmd[] = {"m", "musicpad", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-	{ MODKEY|ControlMask,           XK_m,      togglescratch,  {.v = musicpadcmd } },
-	{ MODKEY,                       XK_equal, scratchpad_show, {0} },
-	{ MODKEY|ShiftMask,             XK_equal, scratchpad_hide, {0} },
-	{ MODKEY,                       XK_minus,scratchpad_remove,{0} },
-	{ MODKEY|ALTKEY,                XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      inplacerotate,  {.i = +1} },
-	{ MODKEY|ShiftMask,             XK_k,      inplacerotate,  {.i = -1} },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY,                       XK_a,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_s,      togglesticky,   {0} },
-	{ MODKEY,                       XK_e,      zoom,           {0} },
-	{ MODKEY,                       XK_g,      togglegaps,     {0} },
-	{ MODKEY|ShiftMask,             XK_g,      defaultgaps,    {0} },
-	{ MODKEY|ALTKEY,                XK_g,      incrgaps,       {.i = +1 } },
-	{ MODKEY|ALTKEY|ShiftMask,      XK_g,      incrgaps,       {.i = -1 } },
-	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+    { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
+    { MODKEY|ControlMask,           XK_m,      togglescratch,  {.v = musicpadcmd } },
+    { MODKEY,                       XK_equal, scratchpad_show, {0} },
+    { MODKEY|ShiftMask,             XK_equal, scratchpad_hide, {0} },
+    { MODKEY,                       XK_minus,scratchpad_remove,{0} },
+    { MODKEY|ALTKEY,                XK_b,      togglebar,      {0} },
+    { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_j,      inplacerotate,  {.i = +1} },
+    { MODKEY|ShiftMask,             XK_k,      inplacerotate,  {.i = -1} },
+    { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
+    { MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+    { MODKEY,                       XK_a,      incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
+    { MODKEY,                       XK_s,      togglesticky,   {0} },
+    { MODKEY,                       XK_e,      zoom,           {0} },
+    { MODKEY,                       XK_g,      togglegaps,     {0} },
+    { MODKEY|ShiftMask,             XK_g,      defaultgaps,    {0} },
+    { MODKEY|ALTKEY,                XK_g,      incrgaps,       {.i = +1 } },
+    { MODKEY|ALTKEY|ShiftMask,      XK_g,      incrgaps,       {.i = -1 } },
+    { MODKEY,                       XK_Tab,    view,           {0} },
+    { MODKEY,                       XK_q,      killclient,     {0} },
+    { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_r,      setlayout,      {.v = &layouts[2]} },
     { MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[3]} },
@@ -126,47 +126,47 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_p,      moveresize,     {.v = "0x 0y 25w 0h" } },
     { MODKEY|ShiftMask,             XK_u,      moveresize,     {.v = "0x 0y -25w 0h" } },
     { MODKEY,                       XK_semicolon,   shiftview, { .i = -1 } },
-	{ MODKEY,                       XK_apostrophe,  shiftview, { .i = +1 } },
+    { MODKEY,                       XK_apostrophe,  shiftview, { .i = +1 } },
     { MODKEY|ShiftMask,             XK_semicolon,    shifttag, { .i = -1 } },
-	{ MODKEY|ShiftMask,             XK_apostrophe,   shifttag, { .i = +1 } },
-	{ MODKEY,                       XK_bracketleft,  focusmon, {.i = -1 } },
-	{ MODKEY,                       XK_bracketright, focusmon, {.i = +1 } },
-	{ MODKEY|ShiftMask,             XK_bracketleft,  tagmon,   {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_bracketright, tagmon,   {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_apostrophe,   shifttag, { .i = +1 } },
+    { MODKEY,                       XK_bracketleft,  focusmon, {.i = -1 } },
+    { MODKEY,                       XK_bracketright, focusmon, {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_bracketleft,  tagmon,   {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_bracketright, tagmon,   {.i = +1 } },
     { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ControlMask,           XK_q,      quit,           {0} },
+    TAGKEYS(                        XK_1,                      0)
+    TAGKEYS(                        XK_2,                      1)
+    TAGKEYS(                        XK_3,                      2)
+    TAGKEYS(                        XK_4,                      3)
+    TAGKEYS(                        XK_5,                      4)
+    TAGKEYS(                        XK_6,                      5)
+    TAGKEYS(                        XK_7,                      6)
+    TAGKEYS(                        XK_8,                      7)
+    TAGKEYS(                        XK_9,                      8)
+    { MODKEY|ControlMask,           XK_q,      quit,           {0} },
 };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
+    { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
+    { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+    { ClkWinTitle,          0,              Button2,        zoom,           {0} },
     { ClkStatusText,        0,              Button1,        sigstatusbar,   {.i = 1} },
     { ClkStatusText,        0,              Button2,        sigstatusbar,   {.i = 2} },
     { ClkStatusText,        0,              Button3,        sigstatusbar,   {.i = 3} },
     { ClkStatusText,        0,              Button4,        sigstatusbar,   {.i = 4} },
     { ClkStatusText,        0,              Button5,        sigstatusbar,   {.i = 5} },
-	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
-	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
-	{ ClkTagBar,            0,              Button1,        view,           {0} },
-	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
-	{ ClkTagBar,            0,              Button4,        shiftview,      {.i = -1} },
-	{ ClkTagBar,            0,              Button5,        shiftview,      {.i = +1} },
-	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
-	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+    { ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
+    { ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
+    { ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+    { ClkTagBar,            0,              Button1,        view,           {0} },
+    { ClkTagBar,            0,              Button3,        toggleview,     {0} },
+    { ClkTagBar,            0,              Button4,        shiftview,      {.i = -1} },
+    { ClkTagBar,            0,              Button5,        shiftview,      {.i = +1} },
+    { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
+    { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
 /* signal definitions */
