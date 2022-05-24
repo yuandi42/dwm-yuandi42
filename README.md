@@ -69,6 +69,10 @@ See more in man page (which is still working on, and check out my
 * [No border](https://dwm.suckless.org/patches/noborder/) will be shown if
   there is only one tiled window visible.
 
+## Known issues
+* XparseGeometry seldom works.
+* `wemeet` show grey UI when sharing the screen.
+
 ## See also
 1. My [dotfiles](https://github.com/yuandi42/dotfiles)
 1. My build of [dmenu](https://github.com/yuandi42/dmenu-yuandi42)
