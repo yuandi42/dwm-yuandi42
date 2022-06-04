@@ -10,8 +10,8 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font:size=14", };
-static const char dmenufont[]       = "monospace:size=14";
+static const char *fonts[]          = { "Iosevka Nerd Font:size=12", };
+static const char dmenufont[]       = "monospace:size=12";
 static const char col_bg[]          = "#1d2021";
 static const char col_fg[]          = "#a89984";
 static const char col_g1[]          = "#98971a";
@@ -39,7 +39,6 @@ static const Rule rules[] = {
 	{ "mpv",          NULL,           NULL,            0,            1,           -1,        0 },
 	{ "Pinentry-gtk-2",NULL,          NULL,            0,            1,           -1,        0 },
 	{  "tabbed",     "scratchpad",    NULL,            0,            1,           -1,       's'},
-	{  NULL,          NULL,          "musicpad",       0,            1,           -1,       'm'},
 };
 
 /* layout(s) */
@@ -83,12 +82,10 @@ static const char *dmenucmd[] = { "dmenu_run", NULL }; /* just an example. */
 
 /*First arg only serves to match against key in rules*/
 static const char *scratchpadcmd[] = {"s", "scratchpad", NULL};
-static const char *musicpadcmd[] = {"m", "musicpad", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
-    { MODKEY|ControlMask,           XK_m,      togglescratch,  {.v = musicpadcmd } },
     { MODKEY,                       XK_equal, scratchpad_show, {0} },
     { MODKEY|ShiftMask,             XK_equal, scratchpad_hide, {0} },
     { MODKEY,                       XK_minus,scratchpad_remove,{0} },
@@ -183,5 +180,4 @@ static Button buttons[] = {
 static Signal signals[] = {
 	/* signum       function        argument  */
 	{ 1,            togglescratch,  {.v = scratchpadcmd} },
-	{ 2,            togglescratch,  {.v = musicpadcmd} },
 };
