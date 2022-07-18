@@ -10,8 +10,8 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka Nerd Font:size=12", };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *fonts[]          = { "Iosevka Nerd Font:size=10", };
+static const char dmenufont[]       = "monospace:size=10";
 static const char col_bg[]          = "#1d2021";
 static const char col_fg[]          = "#a89984";
 static const char col_g1[]          = "#98971a";
@@ -114,6 +114,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[5]} },
     { MODKEY,                       XK_y,      setlayout,      {.v = &layouts[6]} },
     { MODKEY,                       XK_w,      togglefloating, {0} },
+    { MODKEY|ShiftMask,             XK_e,      togglefullscr,  {0} },
     { MODKEY|ShiftMask,             XK_c,      movecenter,     {0} },
     { MODKEY,                       XK_i,      moveresize,     {.v = "0x 25y 0w 0h" } },
     { MODKEY,                       XK_o,      moveresize,     {.v = "0x -25y 0w 0h" } },
