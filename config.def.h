@@ -50,24 +50,24 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 #include "shiftview.c"
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "TTT",      bstack },
-	{ "[@]",      spiral },
-	{ "[\\]",     dwindle },
-	{ "[M]",      monocle },
-	{ "|M|",      centeredmaster },
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+    /* symbol     arrange function */
+    { "[]=",      tile },    /* first entry is default */
+    { "TTT",      bstack },
+    { "[@]",      spiral },
+    { "[\\]",     dwindle },
+    { "[M]",      monocle },
+    { "|M|",      centeredmaster },
+    { "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
 #define MODKEY Mod4Mask
 #define ALTKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
-	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-	{ MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
-	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+    { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+    { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+    { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
+    { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
@@ -82,7 +82,7 @@ static const char *dmenucmd[] = { "dmenu_run", NULL }; /* just an example. */
 static const char *scratchpadcmd[] = {"s", "scratchpad", NULL};
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */
+    /* modifier                     key        function        argument */
     { MODKEY,                       XK_grave,  togglescratch,  {.v = scratchpadcmd } },
     { MODKEY,                       XK_equal, scratchpad_show, {0} },
     { MODKEY|ShiftMask,             XK_equal, scratchpad_hide, {0} },
@@ -154,7 +154,7 @@ static Key keys[] = {
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
-	/* click                event mask      button          function        argument */
+    /* click                event mask      button          function        argument */
     { ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
     { ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[6]} },
     { ClkWinTitle,          0,              Button2,        zoom,           {0} },
@@ -178,6 +178,6 @@ static Button buttons[] = {
 /* signum must be greater than 0 */
 /* trigger signals using `xsetroot -name "fsignal:<signum>"` */
 static Signal signals[] = {
-	/* signum       function        argument  */
-	{ 1,            togglescratch,  {.v = scratchpadcmd} },
+    /* signum       function        argument  */
+    { 1,            togglescratch,  {.v = scratchpadcmd} },
 };
