@@ -7,10 +7,11 @@ dozen or so patches added, aimed to work with
 [dwmblocks-aysnc](https://github.com/UtkarshVerma/dwmblocks-async). Details
 below.
 
-## Requirements
-In order to build dwm you need the Xlib header files. And this build needs
-[libxft-bgra](https://github.com/uditkarode/libxft-bgra) patch to show color
-emoji in the panel.
+## Requirements 
+
+In order to build dwm you need the Xlib header files. Since the bgra patch is
+finally merged into master branch, no addtional patch is needed anymore to show
+color fonts
 
 
 ## Installation
