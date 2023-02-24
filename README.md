@@ -1,4 +1,7 @@
 ![dwm icon](dwm.png "icon")
+
+**ATTENTION** : This repo is archived now. I just switched to dwm-flexipatch.
+
 # My build of dwm
 Forked in Mar 18, 2022. No patch from upstream has been added since then.
 
